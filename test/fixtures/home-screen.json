@@ -1,0 +1,11 @@
+{
+  "width": 886,
+  "height": 1916,
+  "observations": [
+    { "text": "Settings", "confidence": 0.98, "x": 0.1, "y": 0.1, "width": 0.2, "height": 0.02 },
+    { "text": "Messages", "confidence": 0.97, "x": 0.1, "y": 0.2, "width": 0.2, "height": 0.02 },
+    { "text": "Settings", "confidence": 0.52, "x": 0.6, "y": 0.7, "width": 0.2, "height": 0.02 },
+    { "text": "Wi-Fi", "confidence": 0.94, "x": 0.08, "y": 0.35, "width": 0.12, "height": 0.018 },
+    { "text": "Not Connected", "confidence": 0.91, "x": 0.6, "y": 0.35, "width": 0.25, "height": 0.018 }
+  ]
+}

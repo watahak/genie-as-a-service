@@ -1,0 +1,61 @@
+{
+  "name": "replay-demo",
+  "description": "Offline demo: replays test/fixtures/settings-screen.json so the full perceve->act loop can be exercised without Screen Recording permission. Clicks set verify:false because the replay frame never changes. Run with --dry-run to see the clicks.",
+  "steps": [
+    {
+      "action": "waitFor",
+      "text": "Settings",
+      "timeoutMs": 2000,
+      "description": "find the Settings header"
+    },
+    {
+      "action": "ocr",
+      "save": "settings"
+    },
+    {
+      "action": "click",
+      "text": "General",
+      "description": "open General",
+      "verify": false
+    },
+    {
+      "action": "waitFor",
+      "text": "^Wi-?Fi$",
+      "mode": "regex",
+      "description": "Wi-Fi row via regex"
+    },
+    {
+      "action": "doubleClick",
+      "text": "Bluetooth",
+      "description": "double-click Bluetooth",
+      "verify": false
+    },
+    {
+      "action": "click",
+      "text": "Display & Brightness",
+      "description": "open Display settings",
+      "verify": false
+    },
+    {
+      "action": "sleep",
+      "ms": 10
+    },
+    {
+      "action": "type",
+      "text": "hello"
+    },
+    {
+      "action": "key",
+      "key": "return"
+    },
+    {
+      "action": "waitFor",
+      "text": "Nonexistent",
+      "optional": true,
+      "timeoutMs": 200
+    },
+    {
+      "action": "ocr"
+    }
+  ]
+}

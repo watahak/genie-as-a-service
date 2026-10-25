@@ -1,0 +1,11 @@
+{
+  "width": 886,
+  "height": 1916,
+  "observations": [
+    { "text": "Settings", "confidence": 0.99, "x": 0.06, "y": 0.03, "width": 0.24, "height": 0.03 },
+    { "text": "Wi-Fi", "confidence": 0.97, "x": 0.08, "y": 0.2, "width": 0.12, "height": 0.018 },
+    { "text": "General", "confidence": 0.96, "x": 0.08, "y": 0.32, "width": 0.16, "height": 0.018 },
+    { "text": "Bluetooth", "confidence": 0.95, "x": 0.08, "y": 0.26, "width": 0.19, "height": 0.018 },
+    { "text": "Display & Brightness", "confidence": 0.93, "x": 0.08, "y": 0.38, "width": 0.38, "height": 0.018 }
+  ]
+}

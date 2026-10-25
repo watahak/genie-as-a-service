@@ -1,0 +1,69 @@
+{
+  "name": "demo",
+  "description": "Open Settings, navigate into General, then force-quit Settings and return to the Home Screen so the next run starts clean. Safe to run with --dry-run.",
+  "steps": [
+    {
+      "action": "home",
+      "description": "go to the Home Screen (Cmd-1)"
+    },
+    {
+      "action": "waitFor",
+      "text": "Settings",
+      "timeoutMs": 15000,
+      "description": "wait for the home screen Settings icon"
+    },
+    {
+      "action": "click",
+      "text": "Settings",
+      "target": "icon",
+      "timeoutMs": 15000,
+      "description": "open Settings"
+    },
+    {
+      "action": "sleep",
+      "ms": 800
+    },
+    {
+      "action": "ocr",
+      "save": "settings-open"
+    },
+    {
+      "action": "waitFor",
+      "text": "Wi-Fi",
+      "mode": "contains",
+      "timeoutMs": 5000,
+      "optional": true,
+      "retry": 1,
+      "description": "wait for the Settings root to render (label OCR is reliable at accurate level)"
+    },
+    {
+      "action": "click",
+      "text": "General",
+      "mode": "contains",
+      "timeoutMs": 5000,
+      "optional": true,
+      "description": "open General"
+    },
+    {
+      "action": "sleep",
+      "ms": 600
+    },
+    {
+      "action": "ocr",
+      "save": "general"
+    },
+    {
+      "action": "forceQuit",
+      "settleMs": 1400,
+      "description": "force-quit Settings so the next run starts at its root page"
+    },
+    {
+      "action": "home",
+      "description": "return to the Home Screen"
+    },
+    {
+      "action": "ocr",
+      "save": "after-force-quit"
+    }
+  ]
+}

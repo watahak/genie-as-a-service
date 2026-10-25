@@ -1,0 +1,33 @@
+{
+  "name": "genie-as-a-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local macOS automation harness that drives iOS apps through iPhone Mirroring using screen capture, Apple Vision OCR, and cliclick",
+  "type": "module",
+  "engines": {
+    "node": ">=22 <24"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "demo": "tsx src/index.ts --scenario scenarios/demo.json",
+    "demo:verbose": "tsx src/index.ts --scenario scenarios/demo.json --verbose --profile --snapshot .shots",
+    "demo:replay": "tsx src/index.ts --scenario scenarios/replay-demo.json --backend replay --fixture test/fixtures/settings-screen.json --verbose --dry-run",
+    "inspect": "tsx src/index.ts --verbose --snapshot .shots --bench 1",
+    "bench": "tsx src/index.ts --bench",
+    "doctor": "tsx src/doctor.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "demo:watch": "tsx src/index.ts --scenario scenarios/demo.json --show-motion --verbose --snapshot .shots"
+  },
+  "dependencies": {
+    "mac-ocr": "^1.2.1"
+  },
+  "optionalDependencies": {
+    "@cherrystudio/mac-system-ocr": "^0.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
